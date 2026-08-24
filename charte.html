@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charte d'utilisation — Haario</title>
+<meta name="description" content="Les conditions d'utilisation de l'application Haario, pour l'adolescent comme pour le parent.">
+<meta name="theme-color" content="#F7F5FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121019" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Haario — feuille de style du site vitrine
+   Thèmes clair / sombre, et sens de lecture LTR / RTL. */
+
+:root {
+  --encre:      #17131F;
+  --encre-2:    #4C4459;
+  --encre-3:    #7A7186;
+  --violet:     #6B4FA8;
+  --violet-sur: #5A3F94;
+  --violet-pale:#EDE7F8;
+  --menthe:     #0E8F6C;
+  --menthe-pale:#D8F2E8;
+  --brume:      #F7F5FB;
+  --craie:      #FFFFFF;
+  --alerte:     #B23A34;
+  --alerte-pale:#FCEEEC;
+  --alerte-bord:#F0D6D2;
+  --alerte-texte:#5E3B38;
+  --trait:      #E4DFEE;
+  --ombre:      0 1px 2px rgba(23,19,31,.04);
+
+  --mesure: 34rem;
+  --large: 62rem;
+  --r: 14px;
+
+  color-scheme: light;
+}
+
+/* Le sombre s'applique soit par choix explicite, soit par réglage système
+   tant que l'utilisateur n'a pas choisi le clair. */
+:root[data-theme="sombre"] {
+  --encre:      #EFEBF7;
+  --encre-2:    #B6ADC8;
+  --encre-3:    #8B819F;
+  --violet:     #B79CE8;
+  --violet-sur: #C9B4F2;
+  --violet-pale:#2B2440;
+  --menthe:     #4FD1A5;
+  --menthe-pale:#1B3A31;
+  --brume:      #121019;
+  --craie:      #1B1726;
+  --alerte:     #F0938B;
+  --alerte-pale:#2E1E1D;
+  --alerte-bord:#4A2E2C;
+  --alerte-texte:#E8BDB8;
+  --trait:      #2C2639;
+  --ombre:      none;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]):not([data-theme="sombre"]) {
+    --encre:      #EFEBF7;
+    --encre-2:    #B6ADC8;
+    --encre-3:    #8B819F;
+    --violet:     #B79CE8;
+    --violet-sur: #C9B4F2;
+    --violet-pale:#2B2440;
+    --menthe:     #4FD1A5;
+    --menthe-pale:#1B3A31;
+    --brume:      #121019;
+    --craie:      #1B1726;
+    --alerte:     #F0938B;
+    --alerte-pale:#2E1E1D;
+    --alerte-bord:#4A2E2C;
+    --alerte-texte:#E8BDB8;
+    --trait:      #2C2639;
+    --ombre:      none;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--brume);
+  color: var(--encre);
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* L'arabe a besoin d'une famille qui le dessine correctement et d'un
+   interlignage un peu plus généreux : les diacritiques manquent d'air. */
+html[lang="ar"] body {
+  font-family: "Noto Naskh Arabic", "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.9;
+}
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] .marque {
+  font-family: "Noto Naskh Arabic", Georgia, serif;
+  font-variation-settings: normal;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-variation-settings: "SOFT" 20, "WONK" 1, "opsz" 40;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--encre);
+  text-wrap: balance;
+}
+
+a { color: var(--violet-sur); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--encre); }
+
+:focus-visible { outline: 2.5px solid var(--violet); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- ossature ---------- */
+
+.enveloppe { width: 100%; max-width: var(--large); margin-inline: auto; padding-inline: 1.5rem; }
+.colonne { max-width: var(--mesure); }
+
+.saut-contenu { position: absolute; inset-inline-start: -9999px; background: var(--craie); padding: .75rem 1rem; border-radius: 8px; }
+.saut-contenu:focus { inset-inline-start: 1rem; top: 1rem; z-index: 50; }
+
+/* ---------- en-tête ---------- */
+
+.tete { padding-block: 1.15rem; border-bottom: 1px solid var(--trait); background: var(--brume); }
+.tete .enveloppe { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+.marque {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 20;
+  font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em;
+  color: var(--encre); text-decoration: none;
+  display: inline-flex; align-items: baseline; gap: .45rem;
+}
+.marque::before {
+  content: ""; width: .5rem; height: .5rem; border-radius: 50%;
+  background: var(--menthe); transform: translateY(-.15em);
+}
+
+.barre { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.nav { display: flex; gap: 1.25rem; font-size: .9375rem; }
+.nav a { color: var(--encre-2); text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--violet-sur); text-decoration: underline; }
+
+/* ---------- réglages : langue et thème ---------- */
+
+.reglages { display: flex; align-items: center; gap: .5rem; }
+
+.choix-langue {
+  font: inherit; font-size: .875rem;
+  color: var(--encre-2); background: var(--craie);
+  border: 1px solid var(--trait); border-radius: 999px;
+  padding: .4rem 2rem .4rem .85rem;
+  appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+                    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 1.1rem center, right .85rem center;
+  background-size: .3rem .3rem, .3rem .3rem;
+  background-repeat: no-repeat;
+}
+[dir="rtl"] .choix-langue {
+  padding: .4rem .85rem .4rem 2rem;
+  background-position: left 0.85rem center, left 1.1rem center;
+}
+.choix-langue:hover { color: var(--encre); border-color: var(--violet); }
+
+.bouton-theme {
+  width: 2.15rem; height: 2.15rem;
+  display: grid; place-items: center;
+  background: var(--craie); color: var(--encre-2);
+  border: 1px solid var(--trait); border-radius: 999px;
+  cursor: pointer; padding: 0;
+}
+.bouton-theme:hover { color: var(--violet-sur); border-color: var(--violet); }
+.bouton-theme svg { width: 1.05rem; height: 1.05rem; display: block; }
+.bouton-theme .lune { display: none; }
+:root[data-theme="sombre"] .bouton-theme .lune { display: block; }
+:root[data-theme="sombre"] .bouton-theme .soleil { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]):not([data-theme="sombre"]) .bouton-theme .lune { display: block; }
+  :root:not([data-theme="clair"]):not([data-theme="sombre"]) .bouton-theme .soleil { display: none; }
+}
+
+/* ---------- hero ---------- */
+
+.hero { padding-block: clamp(3.5rem, 11vw, 7rem) clamp(2.5rem, 7vw, 4.5rem); }
+.hero h1 { font-size: clamp(2.1rem, 6.2vw, 3.9rem); margin: 0 0 1.5rem; max-width: 18ch; }
+.hero h1 .mot { display: inline-block; }
+.hero .souligne { background-image: linear-gradient(transparent 62%, var(--menthe-pale) 62%); padding-inline: .06em; }
+.hero p { font-size: clamp(1.0625rem, 2.1vw, 1.2rem); color: var(--encre-2); max-width: 48ch; margin: 0 0 1.1rem; }
+
+.eyebrow {
+  font-family: "Figtree", sans-serif;
+  font-size: .75rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--menthe); margin: 0 0 1.25rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 .mot { opacity: 0; transform: translateY(.4em); animation: monte .7s cubic-bezier(.22,.7,.3,1) forwards; }
+  .hero p, .hero .eyebrow { opacity: 0; animation: monte .7s cubic-bezier(.22,.7,.3,1) forwards; }
+  .hero .eyebrow { animation-delay: .05s; }
+}
+@keyframes monte { to { opacity: 1; transform: none; } }
+
+.rappel {
+  margin-top: 2.25rem;
+  font-size: .9375rem !important;
+  color: var(--encre-3) !important;
+  border-inline-start: 2px solid var(--violet-pale);
+  padding-inline-start: 1rem;
+  max-width: 46ch;
+}
+
+/* ---------- sections ---------- */
+
+.section { padding-block: clamp(2.75rem, 7vw, 4.5rem); border-top: 1px solid var(--trait); }
+.section > .enveloppe > h2 { font-size: clamp(1.5rem, 3.4vw, 2.05rem); margin: 0 0 1.75rem; max-width: 26ch; }
+.section p { color: var(--encre-2); }
+
+/* les trois rôles : ils coexistent, donc ils sont côte à côte */
+.trois { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 40rem) { .trois { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 60rem) { .trois { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+
+.pan { background: var(--craie); border: 1px solid var(--trait); border-radius: var(--r); padding: 1.6rem 1.5rem; box-shadow: var(--ombre); }
+.pan .role { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--menthe); margin: 0 0 .7rem; }
+.pan h3 { font-size: 1.15rem; margin: 0 0 .6rem; }
+.pan p { margin: 0; font-size: .9875rem; color: var(--encre-2); }
+
+.fil { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--trait); }
+.fil ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .55rem; }
+@media (min-width: 46rem) { .fil ul { grid-template-columns: 1fr 1fr; gap: .55rem 2rem; } }
+.fil li { position: relative; padding-inline-start: 1.4rem; color: var(--encre-2); font-size: .9375rem; }
+.fil li::before { content: ""; position: absolute; inset-inline-start: .25rem; top: .62em; width: .4rem; height: .4rem; border-radius: 50%; background: var(--violet); }
+
+.deux-versants { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 46rem) { .deux-versants { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+
+.versant { background: var(--craie); border: 1px solid var(--trait); border-radius: var(--r); padding: 1.6rem 1.5rem; box-shadow: var(--ombre); }
+.versant h3 { font-size: 1.15rem; margin: 0 0 1rem; }
+.versant ul { margin: 0; padding: 0; list-style: none; }
+.versant li { position: relative; padding-inline-start: 1.6rem; margin-bottom: .7rem; color: var(--encre-2); font-size: .9875rem; }
+.versant li:last-child { margin-bottom: 0; }
+.versant li::before { position: absolute; inset-inline-start: 0; top: 0; font-weight: 700; }
+.versant--non { border-color: var(--alerte-bord); }
+.versant--non li::before { content: "—"; color: var(--alerte); }
+.versant--oui li::before { content: "+"; color: var(--menthe); }
+
+/* ---------- urgence ---------- */
+
+.urgence { background: var(--alerte-pale); border: 1px solid var(--alerte-bord); border-radius: var(--r); padding: 1.75rem 1.6rem; }
+.urgence h2 { font-size: 1.35rem; margin: 0 0 .75rem; color: var(--alerte); }
+.urgence p { margin: 0 0 1.1rem; color: var(--alerte-texte); }
+.numeros { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0; padding: 0; list-style: none; }
+.numeros li { background: var(--craie); border: 1px solid var(--alerte-bord); border-radius: 999px; padding: .45rem 1rem; font-size: .9375rem; color: var(--encre-2); }
+.numeros strong { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 0, "WONK" 0; color: var(--encre); }
+
+/* ---------- pages de contenu ---------- */
+
+.doc { padding-block: clamp(2.5rem, 6vw, 4rem) 4rem; }
+.doc .colonne { max-width: 40rem; }
+.doc h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); margin: 0 0 .5rem; }
+.doc .maj { color: var(--encre-3); font-size: .9375rem; margin: 0 0 2.5rem; }
+.doc h2 { font-size: 1.3rem; margin: 2.75rem 0 .85rem; padding-top: 1.5rem; border-top: 1px solid var(--trait); }
+.doc h2:first-of-type { border-top: none; padding-top: 0; }
+.doc h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+.doc p, .doc li { color: var(--encre-2); }
+.doc ul, .doc ol { padding-inline-start: 1.2rem; }
+.doc li { margin-bottom: .45rem; }
+.doc strong { color: var(--encre); font-weight: 700; }
+.doc em { color: var(--encre-3); }
+
+.doc blockquote { margin: 1.5rem 0; padding-inline-start: 1.15rem; border-inline-start: 3px solid var(--violet-pale); }
+.doc blockquote p { font-size: .9375rem; }
+
+.tableau { overflow-x: auto; margin: 1.5rem 0; }
+.doc table { border-collapse: collapse; width: 100%; font-size: .9375rem; background: var(--craie); border: 1px solid var(--trait); border-radius: var(--r); overflow: hidden; }
+.doc th, .doc td { text-align: start; padding: .7rem .85rem; border-bottom: 1px solid var(--trait); vertical-align: top; }
+.doc th { background: var(--violet-pale); font-weight: 700; font-size: .8125rem; color: var(--encre); }
+.doc tr:last-child td { border-bottom: none; }
+
+.encart { background: var(--craie); border: 1px solid var(--trait); border-inline-start: 3px solid var(--violet); border-radius: var(--r); padding: 1.25rem 1.4rem; margin: 1.75rem 0; }
+.encart p:first-child { margin-top: 0; }
+.encart p:last-child { margin-bottom: 0; }
+.encart--attention { border-inline-start-color: var(--alerte); background: var(--alerte-pale); border-color: var(--alerte-bord); }
+.encart--attention p { color: var(--alerte-texte); }
+
+.etape-mode { background: var(--craie); border: 1px solid var(--trait); border-radius: var(--r); padding: 1.25rem 1.4rem; margin: 1.25rem 0; }
+.etape-mode ol, .etape-mode ul { margin: 0; }
+.etape-mode p:first-child { margin-top: 0; }
+.etape-mode p:last-child { margin-bottom: 0; }
+
+/* Bandeau des pages juridiques : la version française fait foi. */
+.bandeau-langue {
+  background: var(--violet-pale); border: 1px solid var(--trait);
+  border-radius: var(--r); padding: .9rem 1.15rem; margin: 0 0 2rem;
+  font-size: .9rem; color: var(--encre-2);
+}
+
+/* ---------- pied ---------- */
+
+.pied { border-top: 1px solid var(--trait); padding-block: 2.5rem 3.5rem; font-size: .9375rem; color: var(--encre-3); }
+.pied .enveloppe { display: grid; gap: 1.75rem; }
+@media (min-width: 46rem) { .pied .enveloppe { grid-template-columns: 1fr auto; align-items: start; } }
+.pied nav { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.pied a { color: var(--encre-2); text-decoration: none; }
+.pied a:hover { color: var(--violet-sur); text-decoration: underline; }
+.pied .mentions { max-width: 42ch; margin: 0; }
+
+</style>
+<script>
+(function () {
+  try {
+    var d = document.documentElement;
+    var t = localStorage.getItem('haario-theme');
+    if (t) d.setAttribute('data-theme', t);
+    var l = localStorage.getItem('haario-langue');
+    if (l) { d.lang = l; d.dir = (l === 'ar' ? 'rtl' : 'ltr'); }
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+
+<a class="saut-contenu" href="#contenu" data-i18n="saut">Aller au contenu</a>
+
+<header class="tete">
+  <div class="enveloppe">
+    <a class="marque" href="index.html">Haario</a>
+    <div class="barre">
+      <nav class="nav" aria-label="Principale">
+        <a href="index.html" data-i18n="nav.accueil">Accueil</a>
+        <a href="charte.html" aria-current="page" data-i18n="nav.charte">Charte</a>
+        <a href="confidentialite.html" data-i18n="nav.conf">ConfidentialitÃ©</a>
+        <a href="suppression-de-compte.html" data-i18n="nav.supp">Supprimer un compte</a>
+      </nav>
+      <div class="reglages">
+        <select class="choix-langue" id="langue" data-i18n-aria="a11y.langue" aria-label="Choisir la langue">
+          <option value="fr">FranÃ§ais</option>
+          <option value="en">English</option>
+          <option value="es">EspaÃ±ol</option>
+          <option value="ar">Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©</option>
+        </select>
+        <button class="bouton-theme" id="theme" type="button" data-i18n-aria="a11y.theme" aria-label="Changer de thÃ¨me">
+          <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2M12 19.4v2M2.6 12h2M19.4 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"/></svg>
+          <svg class="lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4a8.3 8.3 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="contenu" class="doc" lang="fr" dir="ltr">
+  <div class="enveloppe">
+    <div class="colonne">
+      <p class="bandeau-langue" id="bandeau-langue" data-i18n="bandeau" hidden>Ce document est publiÃ© en franÃ§ais, et la version franÃ§aise fait foi.</p>
+
+      <h1>Charte d'utilisation — Haario</h1>
+      <p class="maj">\1</p>
+      <h2>1. Objet</h2>
+      <p>La présente charte définit les conditions d'utilisation de l'application Haario. Elle s'applique à tout utilisateur : l'adolescent qui utilise l'application, et le parent ou représentant légal titulaire du compte associé.</p>
+      <p>L'utilisation de Haario implique l'acceptation pleine et entière de cette charte par le parent ou représentant légal au nom du mineur.</p>
+      <h2>2. Ce qu'est Haario — et ce qu'elle n'est pas</h2>
+      <p>Haario est une application conçue pour aider un adolescent à exprimer ce qu'il traverse et à faciliter le dialogue avec un adulte de confiance lorsqu'un signal de mal-être est repéré dans les échanges.</p>
+      <p><strong>Haario n'est pas :</strong>
+      - un dispositif médical, un outil de diagnostic ou de traitement d'un trouble psychologique ou psychiatrique ;
+      - un service d'urgence ou de crise ;
+      - un substitut à l'avis d'un professionnel de santé, d'un psychologue ou d'un médecin ;
+      - un service de surveillance continue de l'adolescent par le parent.</p>
+      <p><strong>Haario est :</strong>
+      - un espace d'échange avec un agent conversationnel, conçu pour repérer des signaux de mal-être et orienter vers un adulte ;
+      - un outil qui transmet, dans certaines situations, une information au parent afin qu'il puisse intervenir.</p>
+      <h2>3. En cas d'urgence</h2>
+      <p>Haario ne remplace pas les services d'urgence. En cas de danger immédiat pour la vie ou la sécurité d'un adolescent, contacter sans délai :</p>
+      <ul>
+      <li>le <strong>15</strong> (SAMU) ou le <strong>112</strong> (numéro d'urgence européen),</li>
+      <li>le <strong>3114</strong> (numéro national de prévention du suicide, gratuit, 24h/24),</li>
+      <li>ou se rendre aux urgences les plus proches.</li>
+      </ul>
+      <p>L'équipe Haario n'assure aucune permanence de surveillance en temps réel des conversations et ne peut se substituer à une intervention d'urgence.</p>
+      <h2>4. Fonctionnement du mécanisme d'alerte</h2>
+      <p>Lorsqu'un signal de mal-être est repéré dans les échanges d'un adolescent avec l'agent, un extrait pertinent de la conversation est transmis au parent ou représentant légal titulaire du compte.</p>
+      <ul>
+      <li>Ce mécanisme est expliqué en détail au parent avant toute première utilisation. L'adolescent est informé, dans l'application, qu'un lien existe entre son usage de Haario et l'attention que ses parents portent à son bien-être, sans que le fonctionnement précis de l'analyse ou les conditions exactes de déclenchement d'une transmission lui soient détaillés — afin de préserver la liberté de parole nécessaire au bon fonctionnement du service.</li>
+      <li>Il ne constitue ni une surveillance permanente, ni un accès du parent à l'intégralité des échanges.</li>
+      <li>Il repose sur une analyse automatisée des échanges, qui peut comporter des marges d'erreur : Haario peut ne pas repérer un signal, ou en repérer un qui ne reflète pas une réelle situation de détresse.</li>
+      <li>Ce mécanisme ne se substitue pas à la vigilance du parent, qui reste seul responsable du suivi de son enfant.</li>
+      </ul>
+      <h2>5. Conditions d'accès</h2>
+      <ul>
+      <li>L'application est accessible à partir de 11 ans, sous la responsabilité du parent ou représentant légal, qui atteste de l'âge de l'adolescent lors de la création du compte. Le compte est créé par le parent ou représentant légal, dont le consentement est requis pour tout utilisateur mineur.</li>
+      <li>Haario ne procède à aucune vérification indépendante de l'âge déclaré. Le parent ou représentant légal est seul responsable de l'exactitude de cette déclaration.</li>
+      <li>Le parent ou représentant légal est seul responsable de l'exactitude des autres informations fournies lors de la création du compte, et de la surveillance de l'usage qu'en fait l'adolescent.</li>
+      <li>Un compte est strictement personnel et ne peut être partagé.</li>
+      </ul>
+      <h2>6. Usage autorisé</h2>
+      <p>L'utilisateur s'engage à ne pas :</p>
+      <ul>
+      <li>utiliser Haario à des fins autres que celles pour lesquelles elle est conçue ;</li>
+      <li>tenter de contourner, perturber ou altérer le fonctionnement de l'application ou de l'agent conversationnel ;</li>
+      <li>fournir de fausses informations lors de la création du compte, notamment sur l'âge ;</li>
+      <li>utiliser l'application pour nuire à autrui.</li>
+      </ul>
+      <p>Haario se réserve le droit de suspendre ou de supprimer un compte en cas de manquement à ces engagements.</p>
+      <h2>7. Limites de responsabilité</h2>
+      <ul>
+      <li>Haario fournit un outil d'aide à l'expression et à l'orientation, sans garantie de résultat quant à la détection d'une situation de détresse ou à la résolution de celle-ci.</li>
+      <li>Haario ne saurait être tenue responsable des conséquences d'une absence de détection, d'une détection erronée, ou d'un défaut de réaction du parent à une alerte transmise.</li>
+      <li>La responsabilité de Haario ne peut être engagée en cas de force majeure, de dysfonctionnement technique indépendant de sa volonté, ou d'usage non conforme à la présente charte.</li>
+      </ul>
+      <h2>8. Propriété intellectuelle</h2>
+      <p>L'ensemble des éléments de l'application — interface, contenus, identité visuelle, dénomination « Haario » — est la propriété de M. Wajdi MRABTI et ne peut être reproduit sans autorisation.</p>
+      <p><em>La dénomination « Haario » ne fait pas, à ce jour, l'objet d'un dépôt de marque.</em></p>
+      <h2>9. Données personnelles</h2>
+      <p>Le traitement des données personnelles est décrit dans la <a href="confidentialite.html">Politique de confidentialité</a>, qui fait partie intégrante de la présente charte.</p>
+      <h2>10. Suppression de compte</h2>
+      <p>Les modalités de suppression de compte sont décrites sur la <a href="suppression-de-compte.html">page dédiée</a>, accessible sans nécessité d'installer l'application.</p>
+      <h2>11. Modification de la charte</h2>
+      <p>Cette charte peut être modifiée. Toute modification substantielle, notamment concernant le mécanisme d'alerte ou les conditions d'accès, sera notifiée au parent avant son entrée en vigueur, avec la possibilité de refuser et de supprimer le compte.</p>
+      <h2>12. Droit applicable et litiges</h2>
+      <p>La présente charte est régie par le droit français.</p>
+      <p>En cas de litige, une solution amiable sera recherchée en priorité en écrivant à contact@haarioai.fr. À défaut d'accord, le litige sera porté devant les juridictions françaises compétentes.</p>
+      <p>Conformément au droit de la consommation, tout utilisateur résidant dans l'Union européenne conserve le bénéfice des dispositions impératives de la loi de son pays de résidence habituelle, et la possibilité de saisir les juridictions de ce pays.</p>
+      <h2>13. Contact</h2>
+      <p>Pour toute question relative à cette charte : contact@haarioai.fr</p>
+    </div>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <p class="mentions" data-i18n="pied.mentions">Haario â€” service Ã©ditÃ© par M. Wajdi MRABTI. Adresse postale communiquÃ©e sur demande Ã  <a href="mailto:contact@haarioai.fr">contact@haarioai.fr</a>.</p>
+    <nav aria-label="Documents">
+      <a href="charte.html" data-i18n="pied.charte">Charte d'utilisation</a>
+      <a href="confidentialite.html" data-i18n="pied.conf">Politique de confidentialitÃ©</a>
+      <a href="suppression-de-compte.html" data-i18n="pied.supp">Supprimer un compte</a>
+      <a href="mailto:contact@haarioai.fr" data-i18n="pied.contact">Nous Ã©crire</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+var CHROME = {
+  en: { "saut":"Skip to content","nav.accueil":"Home","nav.charte":"Terms","nav.conf":"Privacy","nav.supp":"Delete an account",
+        "a11y.langue":"Choose language","a11y.theme":"Switch theme",
+        "bandeau":"This document is published in French. The French version is the legally binding one. For a question in English, write to <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>.",
+        "pied.mentions":"Haario â€” service published by Mr Wajdi MRABTI. Postal address provided on request at <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>.",
+        "pied.charte":"Terms of use","pied.conf":"Privacy policy","pied.supp":"Delete an account","pied.contact":"Write to us" },
+  es: { "saut":"Ir al contenido","nav.accueil":"Inicio","nav.charte":"Condiciones","nav.conf":"Privacidad","nav.supp":"Eliminar una cuenta",
+        "a11y.langue":"Elegir idioma","a11y.theme":"Cambiar de tema",
+        "bandeau":"Este documento se publica en francÃ©s. La versiÃ³n francesa es la que da fe. Para cualquier consulta en espaÃ±ol, escriba a <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>.",
+        "pied.mentions":"Haario â€” servicio editado por D. Wajdi MRABTI. DirecciÃ³n postal facilitada previa solicitud en <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>.",
+        "pied.charte":"Condiciones de uso","pied.conf":"PolÃ­tica de privacidad","pied.supp":"Eliminar una cuenta","pied.contact":"EscrÃ­banos" },
+  ar: { "saut":"Ø§Ù„Ø§Ù†ØªÙ‚Ø§Ù„ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ø­ØªÙˆÙ‰","nav.accueil":"Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©","nav.charte":"Ø´Ø±ÙˆØ· Ø§Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù…","nav.conf":"Ø§Ù„Ø®ØµÙˆØµÙŠØ©","nav.supp":"Ø­Ø°Ù Ø­Ø³Ø§Ø¨",
+        "a11y.langue":"Ø§Ø®ØªÙŠØ§Ø± Ø§Ù„Ù„ØºØ©","a11y.theme":"ØªØºÙŠÙŠØ± Ø§Ù„Ù…Ø¸Ù‡Ø±",
+        "bandeau":"Ù‡Ø°Ù‡ Ø§Ù„ÙˆØ«ÙŠÙ‚Ø© Ù…Ù†Ø´ÙˆØ±Ø© Ø¨Ø§Ù„ÙØ±Ù†Ø³ÙŠØ©ØŒ ÙˆØ§Ù„Ù†Ø³Ø®Ø© Ø§Ù„ÙØ±Ù†Ø³ÙŠØ© Ù‡ÙŠ Ø§Ù„Ù…Ø¹ØªÙ…Ø¯Ø© Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹. Ù„Ø£ÙŠ Ø³Ø¤Ø§Ù„ Ø¨Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©ØŒ Ø±Ø§Ø³Ù„ÙˆÙ†Ø§ Ø¹Ù„Ù‰ <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>.",
+        "pied.mentions":"Ù‡Ø§Ø±ÙŠÙˆ â€” Ø®Ø¯Ù…Ø© ÙŠØµØ¯Ø±Ù‡Ø§ Ø§Ù„Ø³ÙŠØ¯ ÙˆØ¬Ø¯ÙŠ Ø§Ù„Ù…Ø±Ø§Ø¨Ø·ÙŠ. ÙŠÙÙ‚Ø¯ÙŽÙ‘Ù… Ø§Ù„Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ø¨Ø±ÙŠØ¯ÙŠ Ø¹Ù†Ø¯ Ø§Ù„Ø·Ù„Ø¨ Ø¹Ù„Ù‰ <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>.",
+        "pied.charte":"Ø´Ø±ÙˆØ· Ø§Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù…","pied.conf":"Ø³ÙŠØ§Ø³Ø© Ø§Ù„Ø®ØµÙˆØµÙŠØ©","pied.supp":"Ø­Ø°Ù Ø­Ø³Ø§Ø¨","pied.contact":"Ø±Ø§Ø³Ù„ÙˆÙ†Ø§" }
+};
+
+(function () {
+  var racine = document.documentElement;
+  var selecteur = document.getElementById('langue');
+  var bouton = document.getElementById('theme');
+
+  var ORIGINE = {};
+  document.querySelectorAll('[data-i18n]').forEach(function (n) {
+    ORIGINE[n.getAttribute('data-i18n')] = n.innerHTML;
+  });
+
+  // âš ï¸ Seule l'interface est traduite. Le texte juridique reste en franÃ§ais :
+  //    une traduction non relue engagerait autant que l'original.
+  function appliquerLangue(code) {
+    var dict = CHROME[code];
+    document.querySelectorAll('[data-i18n]').forEach(function (n) {
+      var cle = n.getAttribute('data-i18n');
+      var v = (dict && dict[cle] !== undefined) ? dict[cle] : ORIGINE[cle];
+      if (v !== undefined) n.innerHTML = v;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (n) {
+      var cle = n.getAttribute('data-i18n-aria');
+      if (dict && dict[cle]) n.setAttribute('aria-label', dict[cle]);
+    });
+    var bandeau = document.getElementById('bandeau-langue');
+    if (bandeau) bandeau.hidden = (code === 'fr');
+    racine.lang = code;
+    racine.dir = (code === 'ar' ? 'rtl' : 'ltr');
+    // Le corps du document reste en franÃ§ais quelle que soit l'interface.
+    var doc = document.getElementById('contenu');
+    if (doc) { doc.lang = 'fr'; doc.dir = 'ltr'; }
+    if (selecteur) selecteur.value = code;
+    try { localStorage.setItem('haario-langue', code); } catch (e) {}
+  }
+
+  var depart = racine.lang;
+  try { depart = localStorage.getItem('haario-langue') || depart; } catch (e) {}
+  if (!CHROME[depart] && depart !== 'fr') depart = 'fr';
+  appliquerLangue(depart);
+
+  if (selecteur) selecteur.addEventListener('change', function () { appliquerLangue(this.value); });
+
+  if (bouton) bouton.addEventListener('click', function () {
+    var actuel = racine.getAttribute('data-theme');
+    if (!actuel) actuel = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'sombre' : 'clair';
+    var suivant = (actuel === 'sombre' ? 'clair' : 'sombre');
+    racine.setAttribute('data-theme', suivant);
+    try { localStorage.setItem('haario-theme', suivant); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
