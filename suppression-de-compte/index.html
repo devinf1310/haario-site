@@ -7,6 +7,9 @@
 <meta name="theme-color" content="#121019" media="(prefers-color-scheme: dark)">
 <title>Supprimer un compte — Haario</title>
 <meta name="description" content="Comment supprimer un compte Haario, depuis l'application ou sans l'installer, et quelles données sont effacées.">
+<link rel="icon" href="/images/haario-tete-64.png" sizes="64x64" type="image/png">
+<link rel="icon" href="/images/haario-tete-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/images/haario-tete-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
@@ -145,9 +148,19 @@ a:hover { color: var(--encre); }
   color: var(--encre); text-decoration: none;
   display: inline-flex; align-items: baseline; gap: .45rem;
 }
-.marque::before {
-  content: ""; width: .5rem; height: .5rem; border-radius: 50%;
-  background: var(--menthe); transform: translateY(-.15em);
+.marque { gap: .55rem; align-items: center; }
+.marque img {
+  width: 2rem; height: 2rem;
+  display: block;
+  /* Le robot est dessine sur fond clair : en mode sombre, un halo tres
+     leger l'empeche de flotter dans le vide. */
+  filter: drop-shadow(0 1px 2px rgba(23,19,31,.12));
+}
+:root[data-theme="sombre"] .marque img { filter: drop-shadow(0 0 6px rgba(183,156,232,.35)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]):not([data-theme="sombre"]) .marque img {
+    filter: drop-shadow(0 0 6px rgba(183,156,232,.35));
+  }
 }
 
 .barre { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
@@ -197,6 +210,28 @@ a:hover { color: var(--encre); }
 /* ---------- hero ---------- */
 
 .hero { padding-block: clamp(3.5rem, 11vw, 7rem) clamp(2.5rem, 7vw, 4.5rem); }
+.hero .enveloppe { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 58rem) {
+  .hero .enveloppe { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 3rem; }
+}
+.hero-visuel { justify-self: center; }
+.hero-visuel img {
+  display: block;
+  width: 100%; max-width: 22rem; height: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-visuel img {
+    opacity: 0;
+    animation: monte .9s cubic-bezier(.22,.7,.3,1) .45s forwards,
+               flotte 7s ease-in-out 1.4s infinite;
+  }
+}
+/* Un mouvement lent et de faible amplitude : il rend la mascotte vivante
+   sans attirer l'oeil pendant la lecture. */
+@keyframes flotte {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-.55rem); }
+}
 .hero h1 { font-size: clamp(2.1rem, 6.2vw, 3.9rem); margin: 0 0 1.5rem; max-width: 18ch; }
 .hero h1 .mot { display: inline-block; }
 .hero .souligne { background-image: linear-gradient(transparent 62%, var(--menthe-pale) 62%); padding-inline: .06em; }
@@ -339,7 +374,7 @@ a:hover { color: var(--encre); }
 
 <header class="tete">
   <div class="enveloppe">
-    <a class="marque" href="/">Haario</a>
+    <a class="marque" href="/"><img src="/images/haario-tete-64.png" alt="" width="32" height="32" decoding="async"><span>Haario</span></a>
     <div class="barre">
       <nav class="nav" aria-label="Principale">
         <a href="/" data-i18n="nav.accueil">Accueil</a>
