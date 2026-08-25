@@ -1,2 +1,13 @@
 __pycache__/
 *.pyc
+
+# ⚠️ Le dépôt est public ET GitHub Pages sert tout l'arbre : docs/ compris
+#    (haarioai.com/docs/… répond 200). Ni le plan de refonte ni les maquettes
+#    ne doivent partir en ligne.
+#
+#    Les maquettes portent les deux affirmations que le §2 du plan interdit
+#    explicitement de publier — « Approuvé par des parents et des ados » et
+#    « Les ados gardent le contrôle » — et le plan cite un diagnostic interne.
+#    Les commiter les rendrait accessibles et indexables.
+docs/PLAN-REFONTE-SITE.md
+maquettes/
