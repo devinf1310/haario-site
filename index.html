@@ -69,6 +69,12 @@
   --alerte-texte:#5E3B38;
 
   /* profondeur */
+  /* Le bouton garde le violet profond de la marque dans les DEUX thèmes :
+     sur le violet clair du mode sombre, du texte blanc tomberait sous le
+     seuil de contraste. Ces deux jetons ne sont donc pas redéfinis plus bas. */
+  --cta-a: #6D3FF0;
+  --cta-b: #5B2FE0;
+
   --ombre:       0 1px 2px rgba(21,18,31,.05), 0 8px 24px -12px rgba(21,18,31,.10);
   --ombre-carte: 0 1px 2px rgba(21,18,31,.04), 0 12px 32px -16px rgba(91,47,224,.18);
   --halo:        rgba(91,47,224,.18);
@@ -336,7 +342,7 @@ img { max-width: 100%; }
   display: inline-flex; align-items: center; gap: .6rem;
   padding: .85rem 1.5rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--violet-vif), var(--violet));
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
   color: #fff; text-decoration: none;
   font-weight: 700; font-size: 1rem;
   box-shadow: 0 10px 26px -12px rgba(91,47,224,.7);
@@ -714,17 +720,46 @@ img { max-width: 100%; }
   <section class="hero">
     <div class="enveloppe">
       <div class="hero-texte">
-      <p class="eyebrow" data-i18n="hero.eyebrow">Compagnon IA pour les 11–18 ans</p>
-      <h1 id="titre-hero" data-i18n="hero.titre">Plus qu'une IA. Un allié pour grandir.</h1>
-      <p data-i18n="hero.p1">La vie d'un ado ne se découpe pas en catégories. Un contrôle de maths à préparer, un manque de motivation, une question qu'on n'ose pas poser ou simplement besoin de parler : tout peut arriver dans la même conversation.</p>
-      <p data-i18n="hero.p2">Haario s'adapte. Il explique quand il faut comprendre, encourage quand il faut avancer et écoute quand il faut parler. Et si quelque chose ne va vraiment pas, Haario sait aussi quand il faut passer le relais et prévenir un parent.</p>
-      <p class="rappel" data-i18n="hero.test">Haario est actuellement en test fermé auprès de familles volontaires. Pour suivre son lancement : <a href="mailto:contact@haarioai.fr">contact@haarioai.fr</a></p>
+        <p class="pastille"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4.4l1.7 5.9 5.9 1.7-5.9 1.7-1.7 5.9-1.7-5.9-5.9-1.7 5.9-1.7z"/></svg><span data-i18n="hero.eyebrow">Compagnon IA pour les 11–18 ans</span></p>
+        <h1 id="titre-hero" data-i18n="hero.titre">Plus qu'une IA. Un allié pour grandir.</h1>
+        <p data-i18n="hero.p1">La vie d'un ado ne se découpe pas en catégories. Un contrôle de maths à préparer, un manque de motivation, une question qu'on n'ose pas poser ou simplement besoin de parler : tout peut arriver dans la même conversation.</p>
+        <p data-i18n="hero.p2">Haario s'adapte. Il explique quand il faut comprendre, encourage quand il faut avancer et écoute quand il faut parler. Et si quelque chose ne va vraiment pas, Haario sait aussi quand il faut passer le relais et prévenir un parent.</p>
+        <!-- Un seul appel à l'action, et il aboutit : l'application n'est pas
+             publiée, aucun autre parcours n'existe. -->
+        <div class="cta-bloc">
+          <a class="cta" href="mailto:contact@haarioai.fr"><span data-i18n="cta.contact">Haario est en test fermé — écrivez-nous</span><svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <p class="sous-cta" data-i18n="hero.test">Le test se déroule auprès de familles volontaires. Écrivez-nous pour suivre le lancement.</p>
+        </div>
       </div>
       <div class="hero-visuel">
-        <img src="/images/haario-logo-hero.webp" width="762" height="847"
-             alt="Le logo de Haario : un H étoilé dans lequel apparaît un petit robot violet."
+        <img src="/images/haario-heros-600.webp"
+             srcset="/images/haario-heros-600.webp 600w, /images/haario-heros-1200.webp 1200w"
+             sizes="(min-width: 58rem) 34rem, 90vw"
+             width="600" height="644"
+             alt="La mascotte de Haario, un petit robot violet, s'élance au milieu de planètes et d'étoiles."
              fetchpriority="high" decoding="async">
       </div>
+    </div>
+  </section>
+
+  <!-- Bandeau de réassurance. ⚠️ Aucune preuve sociale : l'application n'est
+       pas publiée. Le troisième point énonce un fait vérifiable. -->
+  <section class="reassurance" aria-label="Ce qui encadre Haario">
+    <div class="enveloppe">
+      <ul>
+        <li>
+          <span class="jeton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7 2.6v5.4c0 4.2-2.9 7.7-7 8.6-4.1-.9-7-4.4-7-8.6V5.4z"/><path d="M9 11.8l2.1 2.1 4-4.2"/></svg></span>
+          <div><b data-i18n="rea.a.t">Pensé pour protéger</b><span data-i18n="rea.a.p">Un filet de sécurité qui prévient le parent lorsqu'un signal de mal-être ressort.</span></div>
+        </li>
+        <li>
+          <span class="jeton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3.2H6.2A1.7 1.7 0 0 0 4.5 4.9v14.2a1.7 1.7 0 0 0 1.7 1.7h11.6a1.7 1.7 0 0 0 1.7-1.7V8.2z"/><path d="M14.5 3.2v5h5"/><path d="M8.4 13h7.2M8.4 16.6h4.4"/></svg></span>
+          <div><b data-i18n="rea.b.t">Un extrait, jamais l'historique</b><span data-i18n="rea.b.p">Le parent reçoit le passage concerné. Il n'a pas accès aux conversations.</span></div>
+        </li>
+        <li>
+          <span class="jeton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.2" r="3.2"/><path d="M2.9 20.2a6.1 6.1 0 0 1 12.2 0"/><path d="M16.4 5.4a3.2 3.2 0 0 1 0 5.9"/><path d="M17.8 14.6a6.1 6.1 0 0 1 3.3 5.6"/></svg></span>
+          <div><b data-i18n="rea.c.t">Conçu avec des pédopsychiatres et des juristes</b><span data-i18n="rea.c.p">Le cadre d'usage et les documents ont été relus par des professionnels.</span></div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -847,7 +882,11 @@ var TRADUCTIONS = {
     "hero.titre": "More than an AI. An ally for growing up.",
     "hero.p1": "A teenager's life doesn't split into neat categories. A maths test to prepare for, motivation that won't come, a question they don't dare ask, or simply the need to talk: it can all land in the same conversation.",
     "hero.p2": "Haario adapts. It explains when understanding is what's needed, encourages when it's time to move, and listens when talking is what matters. And if something is really wrong, Haario knows when to hand over and alert a parent.",
-    "hero.test": "Haario is currently in closed testing with volunteer families. To follow the launch: <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>",
+    "hero.test": "Testing runs with volunteer families. Write to us to follow the launch.",
+    "cta.contact": "Haario is in closed testing — write to us",
+    "rea.a.t": "Built to protect", "rea.a.p": "A safety net that alerts the parent when a sign of distress comes through.",
+    "rea.b.t": "An excerpt, never the history", "rea.b.p": "The parent receives the passage concerned. They have no access to the conversations.",
+    "rea.c.t": "Designed with child psychiatrists and lawyers", "rea.c.p": "The framework of use and the documents were reviewed by professionals.",
     "roles.titre": "It adapts to what the teenager needs, when they need it",
     "roles.a.role": "Explain", "roles.a.h": "When understanding is what's needed",
     "roles.a.p": "Haario takes the idea from another angle, at the school level on file, and moves forward through questions. Faced with an exercise, it guides the next step — it refuses to take it in the student's place.",
@@ -895,7 +934,11 @@ var TRADUCTIONS = {
     "hero.titre": "Más que una IA. Un aliado para crecer.",
     "hero.p1": "La vida de un adolescente no se divide en categorías. Un examen de matemáticas que preparar, falta de motivación, una pregunta que no se atreve a hacer o simplemente ganas de hablar: todo puede caber en la misma conversación.",
     "hero.p2": "Haario se adapta. Explica cuando hay que entender, anima cuando hay que avanzar y escucha cuando hay que hablar. Y si algo va realmente mal, Haario sabe también cuándo dar el relevo y avisar a un padre o una madre.",
-    "hero.test": "Haario está actualmente en prueba cerrada con familias voluntarias. Para seguir su lanzamiento: <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>",
+    "hero.test": "La prueba se realiza con familias voluntarias. Escríbanos para seguir el lanzamiento.",
+    "cta.contact": "Haario está en prueba cerrada — escríbanos",
+    "rea.a.t": "Pensado para proteger", "rea.a.p": "Una red de seguridad que avisa al progenitor cuando aparece una señal de malestar.",
+    "rea.b.t": "Un extracto, nunca el historial", "rea.b.p": "El progenitor recibe el pasaje en cuestión. No accede a las conversaciones.",
+    "rea.c.t": "Diseñado con psiquiatras infantiles y juristas", "rea.c.p": "El marco de uso y los documentos fueron revisados por profesionales.",
     "roles.titre": "Se adapta a lo que el adolescente necesita, cuando lo necesita",
     "roles.a.role": "Explicar", "roles.a.h": "Cuando hay que entender",
     "roles.a.p": "Haario retoma la noción de otra manera, al nivel escolar indicado, y avanza mediante preguntas. Ante un ejercicio, guía el paso siguiente: se niega a darlo en lugar del alumno.",
@@ -943,7 +986,11 @@ var TRADUCTIONS = {
     "hero.titre": "أكثر من ذكاء اصطناعي. رفيق في طريق النمو.",
     "hero.p1": "حياة المراهق لا تنقسم إلى خانات. اختبار رياضيات يجب التحضير له، حماس غائب، سؤال لا يجرؤ على طرحه، أو مجرد حاجة إلى الكلام: كل ذلك قد يأتي في محادثة واحدة.",
     "hero.p2": "هاريو يتكيّف. يشرح حين يلزم الفهم، ويشجّع حين يلزم التقدّم، ويصغي حين يلزم الكلام. وإذا كان هناك ما يستدعي القلق فعلاً، يعرف هاريو متى يسلّم الأمر ويُنبّه أحد الوالدين.",
-    "hero.test": "هاريو حالياً في مرحلة اختبار مغلق مع عائلات متطوّعة. لمتابعة الإطلاق: <a href=\"mailto:contact@haarioai.fr\">contact@haarioai.fr</a>",
+    "hero.test": "يجري الاختبار مع عائلات متطوّعة. راسلونا لمتابعة الإطلاق.",
+    "cta.contact": "هاريو في مرحلة اختبار مغلق — راسلونا",
+    "rea.a.t": "مصمَّم للحماية", "rea.a.p": "شبكة أمان تُنبّه وليّ الأمر عند ظهور إشارة ضيق.",
+    "rea.b.t": "مقتطف، لا السجلّ كاملاً", "rea.b.p": "يتلقّى وليّ الأمر المقطع المعنيّ فقط، ولا يطّلع على المحادثات.",
+    "rea.c.t": "صُمِّم بمشاركة أطبّاء نفسيين للأطفال وحقوقيين", "rea.c.p": "روجِع إطار الاستخدام والوثائق من قِبل مختصّين.",
     "roles.titre": "يتكيّف مع ما يحتاجه المراهق، في الوقت الذي يحتاجه",
     "roles.a.role": "الشرح", "roles.a.h": "حين يلزم الفهم",
     "roles.a.p": "يعيد هاريو تقديم الفكرة بطريقة أخرى، وفق المستوى الدراسي المسجَّل، ويتقدّم عبر الأسئلة. أمام تمرين، يرشد إلى الخطوة التالية — ولا يقوم بها بدلاً من التلميذ.",
