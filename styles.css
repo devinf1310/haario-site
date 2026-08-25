@@ -134,8 +134,11 @@ a:hover { color: var(--encre); }
 }
 .marque { gap: .55rem; align-items: center; }
 .marque img {
-  width: 2rem; height: 2rem;
-  display: block;
+  /* C'est la marque, pas une pastille : elle doit tenir le regard à côté du
+     mot. Le PNG porte une marge transparente d'environ un quart de sa
+     largeur, donc le robot dessiné reste plus petit que la boîte. */
+  width: 2.75rem; height: 2.75rem;
+  display: block; flex: none;
   /* Le robot est dessine sur fond clair : en mode sombre, un halo tres
      leger l'empeche de flotter dans le vide. */
   filter: drop-shadow(0 1px 2px rgba(23,19,31,.12));
@@ -202,6 +205,13 @@ a:hover { color: var(--encre); }
 .hero-visuel img {
   display: block;
   width: 100%; max-width: 22rem; height: auto;
+}
+/* La colonne de texte fait quatre paragraphes, le visuel une seule image :
+   plafonné à 22 rem, le logo flottait au milieu d'une bande vide. Sur grand
+   écran il occupe toute sa colonne, et le vide restant se referme.
+   (Après la règle ci-dessus : à spécificité égale, c'est l'ordre qui tranche.) */
+@media (min-width: 58rem) {
+  .hero-visuel img { max-width: none; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-visuel img {
