@@ -176,9 +176,29 @@ a:hover { color: var(--encre); }
 }
 
 .barre { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
-.nav { display: flex; gap: 1.25rem; font-size: .9375rem; }
+.nav { display: flex; gap: 1.25rem; font-size: .9375rem; flex-wrap: wrap; }
 .nav a { color: var(--encre-2); text-decoration: none; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--violet-sur); text-decoration: underline; }
+
+/* Sur petit écran, l'en-tête empilait trois blocs et montait à 230 px de
+   haut : la marque, puis la navigation repliée sur trois lignes, puis les
+   réglages. On passe en grille — la marque et les réglages partagent la
+   première ligne, la navigation prend la seconde.
+   `display: contents` fait remonter .nav et .reglages dans cette grille ;
+   .barre n'a aucune sémantique propre, rien ne se perd.
+   Les réglages restent visibles : ce sont des réglages, pas du décor. */
+@media (max-width: 40rem) {
+  .tete .enveloppe {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    row-gap: .8rem; column-gap: 1rem;
+  }
+  .barre { display: contents; }
+  .marque   { grid-column: 1; grid-row: 1; }
+  .reglages { grid-column: 2; grid-row: 1; justify-self: end; }
+  .nav      { grid-column: 1 / -1; grid-row: 2; gap: .35rem 1rem; font-size: .875rem; }
+}
 
 /* ---------- réglages : langue et thème ---------- */
 
