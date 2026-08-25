@@ -357,22 +357,6 @@ img { max-width: 100%; }
 .intro-section { color: var(--encre-2); max-width: 52ch; margin: 0 0 2rem; }
 .section--centre .intro-section { margin-inline: auto; text-align: center; }
 
-/* Ancien balisage de la page d'accueil, encore en place le temps que les
-   sections passent une à une au nouveau gabarit. À retirer ensuite. */
-.section > .enveloppe > h2 { font-size: clamp(1.55rem, 3.4vw, 2.3rem); margin: 0 0 1.75rem; max-width: 26ch; }
-.eyebrow {
-  font-size: .75rem; font-weight: 800; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--violet-sur); margin: 0 0 1.25rem;
-}
-.rappel {
-  margin-top: 2.25rem; font-size: .9375rem !important; color: var(--encre-3) !important;
-  border-inline-start: 2px solid var(--violet-doux); padding-inline-start: 1rem; max-width: 46ch;
-}
-.pan .role {
-  font-size: .72rem; font-weight: 800; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--teinte-sur, var(--violet-sur)); margin: 0 0 .7rem;
-}
-
 /* ══════════════════════════════════════════════════════════════════════
    6. Hero
    ══════════════════════════════════════════════════════════════════════ */
@@ -476,9 +460,19 @@ img { max-width: 100%; }
 .pan--avancer    { --teinte: var(--bleu);   --teinte-sur: var(--bleu-sur);   --teinte-doux: var(--bleu-doux); }
 .pan--parler     { --teinte: var(--orange); --teinte-sur: var(--orange-sur); --teinte-doux: var(--orange-doux); }
 
-.pan .icone { width: 3.5rem; height: 3.5rem; margin-bottom: 1.1rem; display: block; }
+.pan .icone {
+  width: 3.5rem; height: 3.5rem; margin-bottom: 1.1rem; display: block;
+  color: var(--teinte);
+}
 .pan .icone svg { width: 100%; height: 100%; display: block; }
-.pan h3 { font-size: 1.3rem; margin: 0 0 .55rem; color: var(--teinte-sur); font-weight: 800; }
+:root[data-theme="sombre"] .pan .icone { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--teinte) 45%, transparent)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]):not([data-theme="sombre"]) .pan .icone {
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--teinte) 45%, transparent));
+  }
+}
+.pan h3 { font-size: 1.3rem; margin: 0 0 .3rem; color: var(--teinte-sur); font-weight: 800; }
+.pan-sous { font-size: .875rem; font-weight: 600; color: var(--encre-3); margin: 0 0 .7rem; }
 .pan p { margin: 0; font-size: .9875rem; color: var(--encre-2); }
 
 /* la liste des capacités réelles, sous les cartes */
@@ -518,9 +512,11 @@ img { max-width: 100%; }
 }
 .bulles { display: grid; gap: .7rem; }
 .bulle { max-width: 88%; padding: .7rem .95rem; border-radius: 16px; font-size: .9375rem; line-height: 1.5; }
+/* Même violet profond que le bouton, et pour la même raison : en mode
+   sombre, --violet-vif s'éclaircit et le texte blanc devient illisible. */
 .bulle--ado {
   justify-self: end;
-  background: linear-gradient(135deg, var(--violet-vif), var(--violet));
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
   color: #fff;
   border-end-end-radius: 5px;
 }
@@ -563,8 +559,11 @@ img { max-width: 100%; }
    11. Filet de sécurité, données
    ══════════════════════════════════════════════════════════════════════ */
 
-.section p { color: var(--encre-2); }
-.prose { max-width: 54ch; display: grid; gap: 1.1rem; }
+/* Pas de regle sur `.section p` : a (0,1,1) elle battait les composants
+   nommes par une seule classe (.bulle--ado, .pan-sous, .intro-section,
+   .apercu-note) et leur imposait sa couleur. La couleur de lecture est
+   portee par .prose, qui l'herite a ses paragraphes. */
+.prose { max-width: 54ch; display: grid; gap: 1.1rem; color: var(--encre-2); }
 
 /* ══════════════════════════════════════════════════════════════════════
    12. Urgence

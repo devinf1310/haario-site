@@ -366,22 +366,6 @@ img { max-width: 100%; }
 .intro-section { color: var(--encre-2); max-width: 52ch; margin: 0 0 2rem; }
 .section--centre .intro-section { margin-inline: auto; text-align: center; }
 
-/* Ancien balisage de la page d'accueil, encore en place le temps que les
-   sections passent une à une au nouveau gabarit. À retirer ensuite. */
-.section > .enveloppe > h2 { font-size: clamp(1.55rem, 3.4vw, 2.3rem); margin: 0 0 1.75rem; max-width: 26ch; }
-.eyebrow {
-  font-size: .75rem; font-weight: 800; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--violet-sur); margin: 0 0 1.25rem;
-}
-.rappel {
-  margin-top: 2.25rem; font-size: .9375rem !important; color: var(--encre-3) !important;
-  border-inline-start: 2px solid var(--violet-doux); padding-inline-start: 1rem; max-width: 46ch;
-}
-.pan .role {
-  font-size: .72rem; font-weight: 800; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--teinte-sur, var(--violet-sur)); margin: 0 0 .7rem;
-}
-
 /* ══════════════════════════════════════════════════════════════════════
    6. Hero
    ══════════════════════════════════════════════════════════════════════ */
@@ -485,9 +469,19 @@ img { max-width: 100%; }
 .pan--avancer    { --teinte: var(--bleu);   --teinte-sur: var(--bleu-sur);   --teinte-doux: var(--bleu-doux); }
 .pan--parler     { --teinte: var(--orange); --teinte-sur: var(--orange-sur); --teinte-doux: var(--orange-doux); }
 
-.pan .icone { width: 3.5rem; height: 3.5rem; margin-bottom: 1.1rem; display: block; }
+.pan .icone {
+  width: 3.5rem; height: 3.5rem; margin-bottom: 1.1rem; display: block;
+  color: var(--teinte);
+}
 .pan .icone svg { width: 100%; height: 100%; display: block; }
-.pan h3 { font-size: 1.3rem; margin: 0 0 .55rem; color: var(--teinte-sur); font-weight: 800; }
+:root[data-theme="sombre"] .pan .icone { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--teinte) 45%, transparent)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]):not([data-theme="sombre"]) .pan .icone {
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--teinte) 45%, transparent));
+  }
+}
+.pan h3 { font-size: 1.3rem; margin: 0 0 .3rem; color: var(--teinte-sur); font-weight: 800; }
+.pan-sous { font-size: .875rem; font-weight: 600; color: var(--encre-3); margin: 0 0 .7rem; }
 .pan p { margin: 0; font-size: .9875rem; color: var(--encre-2); }
 
 /* la liste des capacités réelles, sous les cartes */
@@ -527,9 +521,11 @@ img { max-width: 100%; }
 }
 .bulles { display: grid; gap: .7rem; }
 .bulle { max-width: 88%; padding: .7rem .95rem; border-radius: 16px; font-size: .9375rem; line-height: 1.5; }
+/* Même violet profond que le bouton, et pour la même raison : en mode
+   sombre, --violet-vif s'éclaircit et le texte blanc devient illisible. */
 .bulle--ado {
   justify-self: end;
-  background: linear-gradient(135deg, var(--violet-vif), var(--violet));
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
   color: #fff;
   border-end-end-radius: 5px;
 }
@@ -572,8 +568,11 @@ img { max-width: 100%; }
    11. Filet de sécurité, données
    ══════════════════════════════════════════════════════════════════════ */
 
-.section p { color: var(--encre-2); }
-.prose { max-width: 54ch; display: grid; gap: 1.1rem; }
+/* Pas de regle sur `.section p` : a (0,1,1) elle battait les composants
+   nommes par une seule classe (.bulle--ado, .pan-sous, .intro-section,
+   .apercu-note) et leur imposait sa couleur. La couleur de lecture est
+   portee par .prose, qui l'herite a ses paragraphes. */
+.prose { max-width: 54ch; display: grid; gap: 1.1rem; color: var(--encre-2); }
 
 /* ══════════════════════════════════════════════════════════════════════
    12. Urgence
@@ -763,25 +762,28 @@ img { max-width: 100%; }
     </div>
   </section>
 
-  <section class="section" id="roles" aria-labelledby="t-roles">
+  <section class="section section--fond" id="roles" aria-labelledby="t-roles">
     <div class="enveloppe">
-      <h2 id="t-roles" data-i18n="roles.titre">Il s'adapte à ce dont l'ado a besoin, au moment où il en a besoin</h2>
+      <h2 id="t-roles" class="titre-section" data-i18n="roles.titre">Il s'adapte à ce dont l'ado a besoin, au moment où il en a besoin</h2>
       <div class="trois">
-        <div class="pan">
-          <p class="role" data-i18n="roles.a.role">Expliquer</p>
-          <h3 data-i18n="roles.a.h">Quand il faut comprendre</h3>
+        <article class="pan pan--comprendre">
+          <span class="icone"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7.5 3.5 16.8 24 26.1l20.5-9.3z" fill="currentColor"/><path d="M12.5 21.5V31c0 3.4 5.1 6.1 11.5 6.1S35.5 34.4 35.5 31v-9.5" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" opacity=".45"/><path d="M41.5 19.4v10.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="41.5" cy="33.2" r="2.9" fill="currentColor"/></svg></span>
+          <h3 data-i18n="roles.a.role">Expliquer</h3>
+          <p class="pan-sous" data-i18n="roles.a.h">Quand il faut comprendre</p>
           <p data-i18n="roles.a.p">Haario reprend la notion autrement, au niveau scolaire renseigné, et avance par questions. Devant un exercice, il guide l'étape suivante — il refuse de la faire à la place de l'élève.</p>
-        </div>
-        <div class="pan">
-          <p class="role" data-i18n="roles.b.role">Encourager</p>
-          <h3 data-i18n="roles.b.h">Quand il faut avancer</h3>
+        </article>
+        <article class="pan pan--avancer">
+          <span class="icone"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M28.6 3.5 10.8 27.4h9.8L18.4 44.5 37.2 19.7h-10z" fill="currentColor"/></svg></span>
+          <h3 data-i18n="roles.b.role">Encourager</h3>
+          <p class="pan-sous" data-i18n="roles.b.h">Quand il faut avancer</p>
           <p data-i18n="roles.b.p">Un gros devoir se découpe, une semaine se planifie, une soirée sans motivation se débloque. Haario remet en route sans faire la morale — c'est souvent là que tout se joue.</p>
-        </div>
-        <div class="pan">
-          <p class="role" data-i18n="roles.c.role">Écouter</p>
-          <h3 data-i18n="roles.c.h">Quand il faut parler</h3>
+        </article>
+        <article class="pan pan--parler">
+          <span class="icone"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8.5 8.5h31a4.5 4.5 0 0 1 4.5 4.5v17.4a4.5 4.5 0 0 1-4.5 4.5H21.9L12 43.6v-8.7H8.5A4.5 4.5 0 0 1 4 30.4V13a4.5 4.5 0 0 1 4.5-4.5z" fill="currentColor"/><path d="M24 29.6c-1.2-.8-6.6-4-6.6-8.2a3.8 3.8 0 0 1 6.6-2.5 3.8 3.8 0 0 1 6.6 2.5c0 4.2-5.4 7.4-6.6 8.2z" fill="var(--carte)"/></svg></span>
+          <h3 data-i18n="roles.c.role">Écouter</h3>
+          <p class="pan-sous" data-i18n="roles.c.h">Quand il faut parler</p>
           <p data-i18n="roles.c.p">Une mauvaise note, une dispute, une journée trop lourde. Haario écoute, sans donner de leçon et sans jamais poser de diagnostic. Quand il faut un adulte, il le dit.</p>
-        </div>
+        </article>
       </div>
       <div class="fil">
         <ul>
@@ -796,9 +798,30 @@ img { max-width: 100%; }
     </div>
   </section>
 
+  <!-- Apercu de conversation. ⚠️ L'echange reste anodin : mettre en vitrine
+       un ado qui va mal serait indecent. Il est explicitement presente
+       comme un exemple, pas comme une conversation reelle. -->
+  <section class="section section--centre" aria-labelledby="t-apercu">
+    <div class="enveloppe">
+      <h2 id="t-apercu" class="titre-section" data-i18n="apercu.titre">À quoi ressemble un échange</h2>
+      <p class="intro-section" data-i18n="apercu.intro">Le ton compte autant que la réponse. Voici comment Haario répond quand un ado bloque sur un devoir.</p>
+      <div class="apercu">
+        <div class="apercu-tete">
+          <img src="/images/haario-tete-marque.png" alt="" width="135" height="120" decoding="async">
+          <div><b>Haario</b><span data-i18n="apercu.statut">En ligne</span></div>
+        </div>
+        <div class="bulles">
+          <p class="bulle bulle--ado" data-i18n="apercu.ado">J'ai un contrôle de maths demain et je n'y comprends rien.</p>
+          <p class="bulle bulle--haario" data-i18n="apercu.haario">On va reprendre ça ensemble, tranquillement. Tu veux commencer par quel chapitre ?</p>
+        </div>
+        <p class="apercu-note" data-i18n="apercu.note">Exemple d'illustration, destiné à montrer le ton des échanges.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="t-cadre">
     <div class="enveloppe">
-      <h2 id="t-cadre" data-i18n="cadre.titre">Ce que Haario est, et ce qu'il n'est pas</h2>
+      <h2 id="t-cadre" class="titre-section" data-i18n="cadre.titre">Ce que Haario est, et ce qu'il n'est pas</h2>
       <div class="deux-versants">
         <div class="versant versant--non">
           <h3 data-i18n="cadre.non.h">Haario n'est pas</h3>
@@ -822,10 +845,10 @@ img { max-width: 100%; }
     </div>
   </section>
 
-  <section class="section" id="securite" aria-labelledby="t-securite">
+  <section class="section section--fond" id="securite" aria-labelledby="t-securite">
     <div class="enveloppe">
-      <h2 id="t-securite" data-i18n="secu.titre">Le filet de sécurité, pour les parents</h2>
-      <div class="colonne">
+      <h2 id="t-securite" class="titre-section" data-i18n="secu.titre">Le filet de sécurité, pour les parents</h2>
+      <div class="prose">
         <p data-i18n="secu.p1">Un adolescent confie parfois à une application ce qu'il ne dit à personne. Haario analyse les échanges pour y repérer des signaux de mal-être. Lorsqu'un signal ressort, le parent reçoit l'extrait concerné — pas l'historique.</p>
         <p data-i18n="secu.p2">Ce mécanisme est expliqué en détail au parent avant la première utilisation, et son accord est demandé séparément de la création du compte. Il ne lui donne pas accès aux conversations : il l'avertit, à un moment où l'attention compte.</p>
         <p data-i18n="secu.p3">L'analyse est automatique, donc faillible. Elle peut manquer un signal, ou en voir un là où il n'y a rien. Elle ne remplace pas la vigilance d'un parent, et n'y prétend pas.</p>
@@ -835,8 +858,8 @@ img { max-width: 100%; }
 
   <section class="section" aria-labelledby="t-donnees">
     <div class="enveloppe">
-      <h2 id="t-donnees" data-i18n="data.titre">Les données d'un enfant méritent d'être traitées autrement</h2>
-      <div class="colonne">
+      <h2 id="t-donnees" class="titre-section" data-i18n="data.titre">Les données d'un enfant méritent d'être traitées autrement</h2>
+      <div class="prose">
         <p data-i18n="data.p1">Les échanges d'un adolescent relèvent de ce que le RGPD protège le plus strictement. Nous n'en vendons aucun, nous n'en tirons aucun profilage publicitaire, et nous ne conservons rien plus longtemps que nécessaire.</p>
         <p data-i18n="data.p2">Tout est écrit dans la <a href="/confidentialite">politique de confidentialité</a> : ce qui est collecté, avec qui c'est partagé, combien de temps c'est gardé, et ce qui survit à la <a href="/suppression-de-compte">suppression d'un compte</a>.</p>
       </div>
@@ -845,7 +868,7 @@ img { max-width: 100%; }
 
   <section class="section" aria-labelledby="t-urgence">
     <div class="enveloppe">
-      <div class="urgence colonne">
+      <div class="urgence">
         <h2 id="t-urgence" data-i18n="urg.titre">En cas de danger immédiat</h2>
         <p data-i18n="urg.p">Haario ne remplace pas les services d'urgence et n'assure aucune surveillance en temps réel. Si la vie ou la sécurité d'un adolescent est en jeu, appelez sans attendre :</p>
         <ul class="numeros">
@@ -887,6 +910,12 @@ var TRADUCTIONS = {
     "rea.a.t": "Built to protect", "rea.a.p": "A safety net that alerts the parent when a sign of distress comes through.",
     "rea.b.t": "An excerpt, never the history", "rea.b.p": "The parent receives the passage concerned. They have no access to the conversations.",
     "rea.c.t": "Designed with child psychiatrists and lawyers", "rea.c.p": "The framework of use and the documents were reviewed by professionals.",
+    "apercu.titre": "What a conversation looks like",
+    "apercu.intro": "The tone matters as much as the answer. Here is how Haario replies when a teenager is stuck on homework.",
+    "apercu.statut": "Online",
+    "apercu.ado": "I have a maths test tomorrow and I don't understand any of it.",
+    "apercu.haario": "Let's go over it together, calmly. Which chapter would you like to start with?",
+    "apercu.note": "An illustrative example, meant to show the tone of the exchanges.",
     "roles.titre": "It adapts to what the teenager needs, when they need it",
     "roles.a.role": "Explain", "roles.a.h": "When understanding is what's needed",
     "roles.a.p": "Haario takes the idea from another angle, at the school level on file, and moves forward through questions. Faced with an exercise, it guides the next step — it refuses to take it in the student's place.",
@@ -939,6 +968,12 @@ var TRADUCTIONS = {
     "rea.a.t": "Pensado para proteger", "rea.a.p": "Una red de seguridad que avisa al progenitor cuando aparece una señal de malestar.",
     "rea.b.t": "Un extracto, nunca el historial", "rea.b.p": "El progenitor recibe el pasaje en cuestión. No accede a las conversaciones.",
     "rea.c.t": "Diseñado con psiquiatras infantiles y juristas", "rea.c.p": "El marco de uso y los documentos fueron revisados por profesionales.",
+    "apercu.titre": "Cómo es una conversación",
+    "apercu.intro": "El tono importa tanto como la respuesta. Así responde Haario cuando un adolescente se atasca con los deberes.",
+    "apercu.statut": "En línea",
+    "apercu.ado": "Mañana tengo un examen de matemáticas y no entiendo nada.",
+    "apercu.haario": "Vamos a repasarlo juntos, con calma. ¿Por qué capítulo quieres empezar?",
+    "apercu.note": "Ejemplo ilustrativo, para mostrar el tono de las conversaciones.",
     "roles.titre": "Se adapta a lo que el adolescente necesita, cuando lo necesita",
     "roles.a.role": "Explicar", "roles.a.h": "Cuando hay que entender",
     "roles.a.p": "Haario retoma la noción de otra manera, al nivel escolar indicado, y avanza mediante preguntas. Ante un ejercicio, guía el paso siguiente: se niega a darlo en lugar del alumno.",
@@ -991,6 +1026,12 @@ var TRADUCTIONS = {
     "rea.a.t": "مصمَّم للحماية", "rea.a.p": "شبكة أمان تُنبّه وليّ الأمر عند ظهور إشارة ضيق.",
     "rea.b.t": "مقتطف، لا السجلّ كاملاً", "rea.b.p": "يتلقّى وليّ الأمر المقطع المعنيّ فقط، ولا يطّلع على المحادثات.",
     "rea.c.t": "صُمِّم بمشاركة أطبّاء نفسيين للأطفال وحقوقيين", "rea.c.p": "روجِع إطار الاستخدام والوثائق من قِبل مختصّين.",
+    "apercu.titre": "كيف تبدو المحادثة",
+    "apercu.intro": "النبرة لا تقلّ أهمّية عن الجواب. هكذا يردّ هاريو حين يتعثّر مراهق في واجبه.",
+    "apercu.statut": "متصل",
+    "apercu.ado": "غداً لديّ اختبار في الرياضيات ولا أفهم شيئاً.",
+    "apercu.haario": "سنراجعها معاً، بهدوء. من أيّ فصل تريد أن نبدأ؟",
+    "apercu.note": "مثال توضيحيّ، الغرض منه إظهار نبرة المحادثات.",
     "roles.titre": "يتكيّف مع ما يحتاجه المراهق، في الوقت الذي يحتاجه",
     "roles.a.role": "الشرح", "roles.a.h": "حين يلزم الفهم",
     "roles.a.p": "يعيد هاريو تقديم الفكرة بطريقة أخرى، وفق المستوى الدراسي المسجَّل، ويتقدّم عبر الأسئلة. أمام تمرين، يرشد إلى الخطوة التالية — ولا يقوم بها بدلاً من التلميذ.",
