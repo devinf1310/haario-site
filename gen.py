@@ -80,7 +80,7 @@ for src, dest, titre, desc in PAGES:
     html = html.replace('https://haarioai.com/confidentialite', '/confidentialite')
     html = html.replace('https://haarioai.com/suppression-de-compte', '/suppression-de-compte')
     html = re.sub(r'<p><strong>(Derni\u00e8re mise \u00e0 jour[^<]*)</strong></p>',
-                  r'<p class="maj">\\1</p>', html, count=1)
+                  r'<p class="maj">\1</p>', html, count=1)
     corps_html = u'\n'.join('      ' + l for l in html.splitlines())
 
     os.makedirs(os.path.dirname(dest), exist_ok=True)
