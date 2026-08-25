@@ -28,14 +28,14 @@ GABARIT = u"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{titre} \u2014 Haario</title>
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#F7F5FB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121019" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08060F" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/images/haario-tete-icone-64.png" sizes="64x64" type="image/png">
 <link rel="icon" href="/images/haario-tete-icone-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/images/haario-tete-icone-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
 <style>
 {css}
 </style>
