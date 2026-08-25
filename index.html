@@ -7,15 +7,18 @@
 <meta name="description" content="Haario est un compagnon IA pour les 11–18 ans. Il explique quand il faut comprendre, encourage quand il faut avancer, écoute quand il faut parler.">
 <meta property="og:title" content="Haario — plus qu'une IA, un allié pour grandir">
 <meta property="og:description" content="Compagnon IA pour les 11–18 ans. Il explique quand il faut comprendre, encourage quand il faut avancer, écoute quand il faut parler.">
-<meta property="og:image" content="https://haarioai.com/images/haario-logo-1200.png">
+<meta property="og:image" content="https://haarioai.com/images/haario-partage-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://haarioai.com/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F7F5FB" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121019" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="/images/haario-tete-64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="/images/haario-tete-192.png" sizes="192x192" type="image/png">
-<link rel="apple-touch-icon" href="/images/haario-tete-192.png">
+<link rel="icon" href="/images/haario-tete-icone-64.png" sizes="64x64" type="image/png">
+<link rel="icon" href="/images/haario-tete-icone-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/images/haario-tete-icone-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
@@ -156,10 +159,10 @@ a:hover { color: var(--encre); }
 }
 .marque { gap: .55rem; align-items: center; }
 .marque img {
-  /* C'est la marque, pas une pastille : elle doit tenir le regard à côté du
-     mot. Le PNG porte une marge transparente d'environ un quart de sa
-     largeur, donc le robot dessiné reste plus petit que la boîte. */
-  width: 2.75rem; height: 2.75rem;
+  /* Le fichier est recadré au ras du dessin : la hauteur déclarée ici est
+     donc celle du robot réellement visible, plus celle d'une boîte à moitié
+     vide. Le rapport n'est plus carré, la largeur suit les attributs. */
+  height: 2.5rem; width: auto;
   display: block; flex: none;
   /* Le robot est dessine sur fond clair : en mode sombre, un halo tres
      leger l'empeche de flotter dans le vide. */
@@ -392,7 +395,7 @@ a:hover { color: var(--encre); }
 
 <header class="tete">
   <div class="enveloppe">
-    <a class="marque" href="/"><img src="/images/haario-tete-64.png" srcset="/images/haario-tete-64.png 1x, /images/haario-tete-192.png 2x" alt="" width="44" height="44" decoding="async"><span>Haario</span></a>
+    <a class="marque" href="/"><img src="/images/haario-tete-marque.png" alt="" width="135" height="120" decoding="async"><span>Haario</span></a>
     <div class="barre">
       <nav class="nav" aria-label="Principale">
         <a href="#roles" data-i18n="nav.roles">Les trois rôles</a>
@@ -428,7 +431,7 @@ a:hover { color: var(--encre); }
       <p class="rappel" data-i18n="hero.test">Haario est actuellement en test fermé auprès de familles volontaires. Pour suivre son lancement : <a href="mailto:contact@haarioai.fr">contact@haarioai.fr</a></p>
       </div>
       <div class="hero-visuel">
-        <img src="/images/haario-logo-560.png" width="560" height="560"
+        <img src="/images/haario-logo-hero.webp" width="762" height="847"
              alt="Le logo de Haario : un H étoilé dans lequel apparaît un petit robot violet."
              fetchpriority="high" decoding="async">
       </div>

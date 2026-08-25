@@ -134,10 +134,10 @@ a:hover { color: var(--encre); }
 }
 .marque { gap: .55rem; align-items: center; }
 .marque img {
-  /* C'est la marque, pas une pastille : elle doit tenir le regard à côté du
-     mot. Le PNG porte une marge transparente d'environ un quart de sa
-     largeur, donc le robot dessiné reste plus petit que la boîte. */
-  width: 2.75rem; height: 2.75rem;
+  /* Le fichier est recadré au ras du dessin : la hauteur déclarée ici est
+     donc celle du robot réellement visible, plus celle d'une boîte à moitié
+     vide. Le rapport n'est plus carré, la largeur suit les attributs. */
+  height: 2.5rem; width: auto;
   display: block; flex: none;
   /* Le robot est dessine sur fond clair : en mode sombre, un halo tres
      leger l'empeche de flotter dans le vide. */

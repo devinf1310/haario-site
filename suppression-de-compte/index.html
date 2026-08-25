@@ -7,9 +7,9 @@
 <meta name="theme-color" content="#121019" media="(prefers-color-scheme: dark)">
 <title>Supprimer un compte — Haario</title>
 <meta name="description" content="Comment supprimer un compte Haario, depuis l'application ou sans l'installer, et quelles données sont effacées.">
-<link rel="icon" href="/images/haario-tete-64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="/images/haario-tete-192.png" sizes="192x192" type="image/png">
-<link rel="apple-touch-icon" href="/images/haario-tete-192.png">
+<link rel="icon" href="/images/haario-tete-icone-64.png" sizes="64x64" type="image/png">
+<link rel="icon" href="/images/haario-tete-icone-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/images/haario-tete-icone-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
@@ -150,10 +150,10 @@ a:hover { color: var(--encre); }
 }
 .marque { gap: .55rem; align-items: center; }
 .marque img {
-  /* C'est la marque, pas une pastille : elle doit tenir le regard à côté du
-     mot. Le PNG porte une marge transparente d'environ un quart de sa
-     largeur, donc le robot dessiné reste plus petit que la boîte. */
-  width: 2.75rem; height: 2.75rem;
+  /* Le fichier est recadré au ras du dessin : la hauteur déclarée ici est
+     donc celle du robot réellement visible, plus celle d'une boîte à moitié
+     vide. Le rapport n'est plus carré, la largeur suit les attributs. */
+  height: 2.5rem; width: auto;
   display: block; flex: none;
   /* Le robot est dessine sur fond clair : en mode sombre, un halo tres
      leger l'empeche de flotter dans le vide. */
@@ -384,7 +384,7 @@ a:hover { color: var(--encre); }
 
 <header class="tete">
   <div class="enveloppe">
-    <a class="marque" href="/"><img src="/images/haario-tete-64.png" srcset="/images/haario-tete-64.png 1x, /images/haario-tete-192.png 2x" alt="" width="44" height="44" decoding="async"><span>Haario</span></a>
+    <a class="marque" href="/"><img src="/images/haario-tete-marque.png" alt="" width="135" height="120" decoding="async"><span>Haario</span></a>
     <div class="barre">
       <nav class="nav" aria-label="Principale">
         <a href="/" data-i18n="nav.accueil">Accueil</a>
