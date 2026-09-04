@@ -43,7 +43,7 @@ Lorsqu'un signal de mal-être est repéré dans les échanges d'un adolescent av
 
 ## 5. Conditions d'accès
 
-- L'application est accessible à partir de 11 ans, sous la responsabilité du parent ou représentant légal, qui atteste de l'âge de l'adolescent lors de la création du compte. Le compte est créé par le parent ou représentant légal, dont le consentement est requis pour tout utilisateur mineur.
+- L'application est accessible à partir de 13 ans, sous la responsabilité du parent ou représentant légal, qui atteste de l'âge de l'adolescent lors de la création du compte. Le compte est créé par le parent ou représentant légal, dont le consentement est requis pour tout utilisateur mineur.
 - Haario ne procède à aucune vérification indépendante de l'âge déclaré. Le parent ou représentant légal est seul responsable de l'exactitude de cette déclaration.
 - Le parent ou représentant légal est seul responsable de l'exactitude des autres informations fournies lors de la création du compte, et de la surveillance de l'usage qu'en fait l'adolescent.
 - Un compte est strictement personnel et ne peut être partagé.

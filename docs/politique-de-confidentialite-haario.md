@@ -91,7 +91,7 @@ Aucune autre entité tierce n'a accès aux données, sauf obligation légale (r�
 - **Consentement explicite (2)**, recueilli par une case distincte, du parent ou représentant légal pour l'analyse des conversations et le traitement des données de santé mentale qui en résulte, au sens de l'article 9.2.a du RGPD.
 - **Intérêt légitime** pour les données techniques strictement nécessaires à la sécurité et au bon fonctionnement du service.
 
-L'application est accessible à partir de 11 ans. L'âge du consentement numérique étant fixé à 15 ans en France, le consentement du parent ou représentant légal est requis pour l'ensemble des utilisateurs mineurs de moins de 15 ans, et il est en pratique demandé pour tous les comptes.
+L'application est accessible à partir de 13 ans. L'âge du consentement numérique étant fixé à 15 ans en France, le consentement du parent ou représentant légal est requis pour l'ensemble des utilisateurs mineurs de moins de 15 ans, et il est en pratique demandé pour tous les comptes.
 
 Le retrait du consentement à l'analyse des échanges entraîne l'impossibilité de fournir le service : il s'exerce par la suppression du compte, selon les modalités décrites sur la page dédiée.
 

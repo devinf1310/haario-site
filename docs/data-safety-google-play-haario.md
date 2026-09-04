@@ -78,10 +78,16 @@ Ces durées doivent être identiques à celles de la section 5 de la politique d
 
 | Champ | Valeur |
 |---|---|
-| Public cible déclaré | Enfants et adolescents — à partir de 11 ans |
+| Public cible déclaré | Adolescents — à partir de 13 ans |
 | Compte créé et détenu par | Le parent ou représentant légal |
 
-> ⚠️ Une app déclarée accessible à des mineurs relève du programme **Familles** de Google Play, qui impose des obligations supplémentaires : conformité de la publicité (aucune ici), politique de confidentialité liée depuis la fiche Play, et respect des règles applicables aux services destinés aux enfants. **À traiter avant soumission.**
+> ⚠️ Le seuil du programme **Familles** de Google Play est à **moins de 13 ans**. Le public déclaré commençant désormais à 13 ans révolus, l'application n'y bascule plus automatiquement, et les obligations propres aux services destinés aux enfants ne s'appliquent plus de plein droit.
+>
+> Ce qui reste dû : le questionnaire **Public cible et contenu** de la Play Console, en déclarant les tranches 13-15 et 16-17 et en indiquant que l'application ne vise pas les enfants ; et la politique de confidentialité liée depuis la fiche Play, qui est exigée de toute application collectant des données personnelles, quel que soit l'âge.
+>
+> ⚠️ Point de vigilance : Google peut requalifier une application dont la présentation attire manifestement les enfants, même lorsque le public déclaré commence à 13 ans. La mascotte et l'univers coloré de la fiche comme du site sont ce qui sera regardé. **À vérifier avant soumission.**
+>
+> ⚠️ Ce seuil de 13 ans est celui de Google, et lui seul. **L'âge du consentement numérique reste fixé à 15 ans en France** : le consentement du parent ou représentant légal demeure requis pour tout utilisateur mineur, et rien de ce qui précède ne le modifie.
 
 ## Pratiques de sécurité des données à cocher
 
