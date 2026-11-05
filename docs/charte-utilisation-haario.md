@@ -1,98 +1,120 @@
 # Charte d'utilisation — Haario
 
-**Dernière mise à jour : 24 août 2026**
+**Dernière mise à jour : 5 novembre 2026**
 
 ## 1. Objet
 
-La présente charte définit les conditions d'utilisation de l'application Haario. Elle s'applique à tout utilisateur : l'adolescent qui utilise l'application, et le parent ou représentant légal titulaire du compte associé.
+Les présentes conditions définissent l'usage de l'application Haario. Elles s'appliquent à tout utilisateur : l'utilisateur
+mineur (moins de 18 ans), l'utilisateur majeur (18 ans et plus), et le parent ou représentant légal d'un utilisateur mineur.
 
-L'utilisation de Haario implique l'acceptation pleine et entière de cette charte par le parent ou représentant légal au nom du mineur.
+## 2. Ce qu'est Haario, et ce qu'elle n'est pas
 
-## 2. Ce qu'est Haario — et ce qu'elle n'est pas
-
-Haario est une application conçue pour aider un adolescent à exprimer ce qu'il traverse et à faciliter le dialogue avec un adulte de confiance lorsqu'un signal de mal-être est repéré dans les échanges.
+Haario est un agent conversationnel qui aide à apprendre, à s'organiser et à mettre des mots sur ce que l'on traverse. Lorsqu'un
+signal de mal-être ou de danger est repéré dans les échanges, Haario oriente vers une aide humaine et, dans les cas prévus
+ci-dessous, prévient une personne de confiance ou l'administrateur de l'application.
 
 **Haario n'est pas :**
-- un dispositif médical, un outil de diagnostic ou de traitement d'un trouble psychologique ou psychiatrique ;
+- un dispositif médical, un outil de diagnostic ou de traitement ;
 - un service d'urgence ou de crise ;
-- un substitut à l'avis d'un professionnel de santé, d'un psychologue ou d'un médecin ;
-- un service de surveillance continue de l'adolescent par le parent.
+- un substitut à l'avis d'un médecin, d'un psychologue ou de tout professionnel de santé ;
+- un service de surveillance continue.
 
-**Haario est :**
-- un espace d'échange avec un agent conversationnel, conçu pour repérer des signaux de mal-être et orienter vers un adulte ;
-- un outil qui transmet, dans certaines situations, une information au parent afin qu'il puisse intervenir.
+Les réponses sont générées par une intelligence artificielle et peuvent comporter des erreurs.
 
 ## 3. En cas d'urgence
 
-Haario ne remplace pas les services d'urgence. En cas de danger immédiat pour la vie ou la sécurité d'un adolescent, contacter sans délai :
+Haario ne remplace pas les services d'urgence. En cas de danger immédiat, contacter sans délai le **15** (SAMU), le **112**
+(numéro d'urgence européen) ou le **3114** (numéro national de prévention du suicide, gratuit, 24 h sur 24), ou se rendre aux
+urgences les plus proches. L'équipe Haario n'assure aucune permanence de surveillance en temps réel des conversations.
 
-- le **15** (SAMU) ou le **112** (numéro d'urgence européen),
-- le **3114** (numéro national de prévention du suicide, gratuit, 24h/24),
-- ou se rendre aux urgences les plus proches.
+## 4. Inscription et utilisation
 
-L'équipe Haario n'assure aucune permanence de surveillance en temps réel des conversations et ne peut se substituer à une intervention d'urgence.
+**Les mineurs ne peuvent utiliser Haario qu'avec l'accord et le rattachement d'un parent.**
 
-## 4. Fonctionnement du mécanisme d'alerte
+**4.1 Utilisateur mineur (moins de 18 ans).** Le compte n'est utilisable qu'avec l'accord et la validation d'un parent ou
+représentant légal. Le parent confirme que le compte est celui de son enfant, valide le profil (prénom, nom, date de naissance)
+et donne les consentements décrits dans la politique de confidentialité. Tant que le parent n'a pas validé, le compte n'est pas
+ouvert. Le profil d'un enfant rattaché ne peut être modifié que par son parent.
 
-Lorsqu'un signal de mal-être est repéré dans les échanges d'un adolescent avec l'agent, un extrait pertinent de la conversation est transmis au parent ou représentant légal titulaire du compte.
+**4.2 Utilisateur majeur (18 ans et plus).** Le compte est autonome : il n'a ni parent rattaché, ni suivi parental. L'utilisateur
+atteste avoir 18 ans révolus et donne lui-même les consentements décrits dans la politique de confidentialité.
 
-- Ce mécanisme est expliqué en détail au parent avant toute première utilisation. L'adolescent est informé, dans l'application, qu'un lien existe entre son usage de Haario et l'attention que ses parents portent à son bien-être, sans que le fonctionnement précis de l'analyse ou les conditions exactes de déclenchement d'une transmission lui soient détaillés — afin de préserver la liberté de parole nécessaire au bon fonctionnement du service.
-- Il ne constitue ni une surveillance permanente, ni un accès du parent à l'intégralité des échanges.
-- Il repose sur une analyse automatisée des échanges, qui peut comporter des marges d'erreur : Haario peut ne pas repérer un signal, ou en repérer un qui ne reflète pas une réelle situation de détresse.
-- Ce mécanisme ne se substitue pas à la vigilance du parent, qui reste seul responsable du suivi de son enfant.
+**4.3 Exactitude de la date de naissance.** La date de naissance est déclarée par l'utilisateur, et Haario ne procède à aucune
+vérification indépendante. Un compte de moins de 18 ans ne peut pas devenir autonome en déclarant une autre date : le service
+recalcule l'âge à partir de la date enregistrée. Fournir une fausse date de naissance est interdit.
 
-## 5. Conditions d'accès
+**4.4 Compte personnel.** Un compte est strictement personnel et ne peut être partagé.
 
-- L'application est accessible à partir de 13 ans, sous la responsabilité du parent ou représentant légal, qui atteste de l'âge de l'adolescent lors de la création du compte. Le compte est créé par le parent ou représentant légal, dont le consentement est requis pour tout utilisateur mineur.
-- Haario ne procède à aucune vérification indépendante de l'âge déclaré. Le parent ou représentant légal est seul responsable de l'exactitude de cette déclaration.
-- Le parent ou représentant légal est seul responsable de l'exactitude des autres informations fournies lors de la création du compte, et de la surveillance de l'usage qu'en fait l'adolescent.
-- Un compte est strictement personnel et ne peut être partagé.
+## 5. Les alertes de santé et de sécurité
 
-## 6. Usage autorisé
+Lorsqu'un signal de mal-être ou de danger est repéré dans les échanges, une alerte est émise. Elle repose sur une analyse
+automatisée qui peut se tromper : un signal peut ne pas être repéré, ou l'être à tort.
 
-L'utilisateur s'engage à ne pas :
+- **Compte mineur rattaché :** l'alerte, avec un extrait pertinent de la conversation, est transmise au parent
+  ou représentant légal, et l'équipe Haario peut en être informée pour les situations les plus graves. Ce n'est ni une surveillance permanente ni un accès du
+  parent à l'ensemble des échanges.
+- **Compte de 18 ans et plus (autonome) :** l'alerte n'est transmise à aucun proche. Elle est reçue **uniquement par
+  l'administrateur de l'application** (l'équipe Haario), pour permettre une réponse de sécurité et la prise de contact si nécessaire.
+- **Compte rattaché ayant atteint 18 ans :** voir la section 6.
 
-- utiliser Haario à des fins autres que celles pour lesquelles elle est conçue ;
-- tenter de contourner, perturber ou altérer le fonctionnement de l'application ou de l'agent conversationnel ;
-- fournir de fausses informations lors de la création du compte, notamment sur l'âge ;
-- utiliser l'application pour nuire à autrui.
+Le fonctionnement précis de l'analyse n'est pas détaillé aux utilisateurs, afin de préserver la liberté de parole nécessaire au
+service. Aucun contenu de l'application n'affirme que les échanges ne sont pas analysés.
 
-Haario se réserve le droit de suspendre ou de supprimer un compte en cas de manquement à ces engagements.
+## 6. À 18 ans : fin du suivi des alertes par le parent
 
-## 7. Limites de responsabilité
+Un utilisateur dont le compte est rattaché à un parent et qui atteint 18 ans peut, depuis les paramètres de l'application, **mettre
+fin au suivi des alertes par son parent**.
 
-- Haario fournit un outil d'aide à l'expression et à l'orientation, sans garantie de résultat quant à la détection d'une situation de détresse ou à la résolution de celle-ci.
-- Haario ne saurait être tenue responsable des conséquences d'une absence de détection, d'une détection erronée, ou d'un défaut de réaction du parent à une alerte transmise.
-- La responsabilité de Haario ne peut être engagée en cas de force majeure, de dysfonctionnement technique indépendant de sa volonté, ou d'usage non conforme à la présente charte.
+- Les alertes ne sont alors plus envoyées au parent. Elles sont reçues par l'administrateur de l'application.
+- **Le parent continue de voir tout le reste de ce qu'il voyait avant, à l'exception des alertes, y compris l'abonnement** : la
+  révocation ne coupe que les alertes, ni le compte, ni l'abonnement, ni les autres informations.
+- Le parent est informé que le suivi des alertes a pris fin.
+- **Cette révocation est définitive.** Elle ne peut pas être annulée.
+- Tant que l'utilisateur n'a pas fait cette démarche, rien ne change pour son compte : les comptes existants ne sont pas modifiés
+  automatiquement à 18 ans.
 
+## 7. Usage autorisé
 
+L'utilisateur s'engage à ne pas : détourner Haario de sa finalité ; tenter de contourner, perturber ou altérer l'application ou
+l'agent ; fournir de fausses informations, notamment sur la date de naissance ; utiliser l'application pour nuire à autrui. Haario
+peut suspendre ou supprimer un compte en cas de manquement.
 
-## 8. Propriété intellectuelle
+## 8. Abonnement et achats
 
-L'ensemble des éléments de l'application — interface, contenus, identité visuelle, dénomination « Haario » — est la propriété de M. Wajdi MRABTI et ne peut être reproduit sans autorisation.
+Les offres payantes sont proposées par le parent pour un compte mineur, et par l'utilisateur lui-même pour un compte autonome. Les
+achats passent par la boutique d'applications (Google Play ou App Store), qui en gère le paiement. **La protection prévue à la section 5
+ne dépend jamais d'un paiement.**
 
-*La dénomination « Haario » ne fait pas, à ce jour, l'objet d'un dépôt de marque.*
+## 9. Limites de responsabilité
 
-## 9. Données personnelles
+Haario est un outil d'aide à l'expression et à l'orientation, sans garantie de résultat quant à la détection d'une situation de
+détresse. Sa responsabilité ne peut être engagée pour une absence de détection, une détection erronée, un défaut de réaction à
+une alerte transmise, un cas de force majeure ou un usage non conforme. Le parent reste responsable de l'accompagnement de son enfant.
 
-Le traitement des données personnelles est décrit dans la [Politique de confidentialité](https://haarioai.com/confidentialite), qui fait partie intégrante de la présente charte.
+## 10. Propriété intellectuelle
 
-## 10. Suppression de compte
+Les éléments de l'application (interface, contenus, identité visuelle, dénomination « Haario ») sont la propriété de M. Wajdi
+MRABTI et ne peuvent être reproduits sans autorisation. La dénomination « Haario » ne fait pas, à ce jour, l'objet d'un dépôt de marque.
 
-Les modalités de suppression de compte sont décrites sur la [page dédiée](https://haarioai.com/suppression-de-compte), accessible sans nécessité d'installer l'application.
+## 11. Données personnelles et suppression du compte
 
-## 11. Modification de la charte
+Le traitement des données est décrit dans la [Politique de confidentialité](https://haarioai.com/confidentialite), qui fait partie
+des présentes conditions. La suppression du compte est décrite sur la
+[page dédiée](https://haarioai.com/suppression-de-compte), accessible sans installer l'application.
 
-Cette charte peut être modifiée. Toute modification substantielle, notamment concernant le mécanisme d'alerte ou les conditions d'accès, sera notifiée au parent avant son entrée en vigueur, avec la possibilité de refuser et de supprimer le compte.
+## 12. Modification des conditions
 
-## 12. Droit applicable et litiges
+Toute modification substantielle (alertes, conditions d'accès) est notifiée avant son entrée en vigueur, au parent pour un
+compte mineur et à l'utilisateur pour un compte autonome, avec la possibilité de refuser et de supprimer le compte.
 
-La présente charte est régie par le droit français.
+## 13. Droit applicable et litiges
 
-En cas de litige, une solution amiable sera recherchée en priorité en écrivant à contact@haarioai.fr. À défaut d'accord, le litige sera porté devant les juridictions françaises compétentes.
+Droit français. Une solution amiable est recherchée en priorité à contact@haarioai.fr, à défaut les juridictions françaises
+compétentes. L'utilisateur résidant dans l'Union européenne conserve le bénéfice des dispositions impératives de la loi de
+son pays de résidence habituelle.
 
-Conformément au droit de la consommation, tout utilisateur résidant dans l'Union européenne conserve le bénéfice des dispositions impératives de la loi de son pays de résidence habituelle, et la possibilité de saisir les juridictions de ce pays.
+## 14. Contact
 
-## 13. Contact
+contact@haarioai.fr
 
-Pour toute question relative à cette charte : contact@haarioai.fr
+---
