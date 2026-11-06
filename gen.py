@@ -70,7 +70,7 @@ PAGES = [
      u"Comment Haario collecte, utilise, partage et conserve les donn\u00e9es des adolescents et de leurs parents."),
     ("charte-utilisation-haario.md", "charte/index.html",
      u"Charte d'utilisation",
-     u"Les conditions d'utilisation de l'application Haario, pour l'adolescent comme pour le parent."),
+     u"Les conditions d'utilisation de l'application Haario, pour les utilisateurs et pour les parents."),
 ]
 
 for src, dest, titre, desc in PAGES:
